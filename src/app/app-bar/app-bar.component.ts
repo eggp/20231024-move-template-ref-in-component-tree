@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AppLayoutService, TplDef } from '../app-layout/app-layout.service';
+import { AppLayoutService, TplRef } from '../app-layout/app-layout.service';
 
 @Component({
   selector: 'app-app-bar',
@@ -24,16 +24,16 @@ import { AppLayoutService, TplDef } from '../app-layout/app-layout.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppBarComponent {
-  appBarWidget: TplDef = null;
-  extraMenuItems: TplDef = null;
+  appBarTplRef: TplRef = null;
+  extraMenuItemsTplRef: TplRef = null;
 
   constructor(appLayoutService: AppLayoutService, cdr: ChangeDetectorRef) {
     appLayoutService.appBarWidget$.subscribe((appBarWidget) => {
-      this.appBarWidget = appBarWidget;
+      this.appBarTplRef = appBarWidget;
       cdr.markForCheck();
     });
     appLayoutService.extraMenuItems$.subscribe((extraMenuItems) => {
-      this.extraMenuItems = extraMenuItems;
+      this.extraMenuItemsTplRef = extraMenuItems;
       cdr.markForCheck();
     });
   }

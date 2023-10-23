@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
   <span>App bar</span>
   <div style="flex-grow: 1"></div>
-  <ng-container *ngIf="appBarWidget !== null">
-    <ng-container *ngTemplateOutlet="appBarWidget!"></ng-container>
+  <ng-container *ngIf="appBarTplRef !== null">
+    <ng-container *ngTemplateOutlet="appBarTplRef!"></ng-container>
   </ng-container>
   <button
     mat-icon-button
@@ -24,8 +24,8 @@
       <mat-icon>notifications_off</mat-icon>
       <span>Disable alerts</span>
     </button>
-    <ng-container *ngIf="extraMenuItems !== null">
-      <ng-container *ngTemplateOutlet="extraMenuItems!"></ng-container>
+    <ng-container *ngIf="extraMenuItemsTplRef !== null">
+      <ng-container *ngTemplateOutlet="extraMenuItemsTplRef!"></ng-container>
     </ng-container>
   </mat-menu>
 </mat-toolbar>

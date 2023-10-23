@@ -2,14 +2,14 @@ import { Injectable, TemplateRef } from '@angular/core';
 import { BehaviorSubject, filter } from 'rxjs';
 import { NavigationStart, Router } from '@angular/router';
 
-export type TplDef = TemplateRef<unknown> | null;
+export type TplRef = TemplateRef<unknown> | null;
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppLayoutService {
-  #appBarWidget$ = new BehaviorSubject<TplDef>(null);
-  #extraMenuItems$ = new BehaviorSubject<TplDef>(null);
+  #appBarWidget$ = new BehaviorSubject<TplRef>(null);
+  #extraMenuItems$ = new BehaviorSubject<TplRef>(null);
 
   constructor(router: Router) {
     router.events
@@ -20,7 +20,7 @@ export class AppLayoutService {
       });
   }
 
-  set appBarWidget(cmpDef: TplDef) {
+  set appBarWidget(cmpDef: TplRef) {
     this.#appBarWidget$.next(cmpDef);
   }
 
@@ -28,7 +28,7 @@ export class AppLayoutService {
     return this.#appBarWidget$.asObservable();
   }
 
-  set extraMenuItems(menuItemsDefs: TplDef) {
+  set extraMenuItems(menuItemsDefs: TplRef) {
     this.#extraMenuItems$.next(menuItemsDefs);
   }
 
