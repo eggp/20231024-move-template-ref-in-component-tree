@@ -1,0 +1,13 @@
+<p>page1 works!</p>
+<button
+  *ngIf="showAppBarPlugin === false"
+  type="button"
+  (click)="showAppBarPlugin = true"
+>
+  Show app bar plugin
+</button>
+<ng-template  #appBar
+  ><button *ngIf="showAppBarPlugin === true" type="button" (click)="showAppBarPlugin = false">
+    Hide app bar plugin
+  </button></ng-template
+>
