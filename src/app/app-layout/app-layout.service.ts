@@ -15,7 +15,6 @@ export class AppLayoutService {
     router.events
       .pipe(filter((event) => event instanceof NavigationStart))
       .subscribe(() => {
-        console.log('navigation start');
         this.#appBarWidget$.next(null);
         this.#extraMenuItems$.next(null);
       });
