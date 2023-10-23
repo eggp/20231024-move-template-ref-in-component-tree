@@ -6,8 +6,12 @@
 >
   Show app bar plugin
 </button>
-<ng-template  #appBar
-  ><button *ngIf="showAppBarPlugin === true" type="button" (click)="showAppBarPlugin = false">
+<ng-template #appBar
+  ><button
+    *ngIf="showAppBarPlugin === true"
+    type="button"
+    (click)="showAppBarPlugin = false"
+  >
     Hide app bar plugin
   </button></ng-template
 >

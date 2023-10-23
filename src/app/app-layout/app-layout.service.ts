@@ -1,5 +1,5 @@
-import { Injectable, NgZone, TemplateRef, Type } from '@angular/core';
-import { BehaviorSubject, filter, take } from 'rxjs';
+import { Injectable, TemplateRef } from '@angular/core';
+import { BehaviorSubject, filter } from 'rxjs';
 import { NavigationStart, Router } from '@angular/router';
 
 export type TplDef = TemplateRef<unknown> | null;

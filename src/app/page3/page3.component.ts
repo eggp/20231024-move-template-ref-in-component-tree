@@ -7,6 +7,4 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './page3.component.html',
 })
-export default class Page3Component {
-
-}
+export default class Page3Component {}
